@@ -6,16 +6,16 @@ export const HomePage = () => {
     const posts = useSelector<StoreState>(state => state.posts.posts);
 
     return (
-        <main className='bg-[#F2F8F7] py-10 min-h-[91vh]'>
-            <section className="w-[90%] mx-auto flex gap-8">
+        <main className='bg-[#F2F8F7] py-10 min-h-[91vh] overflow-x-hidden'>
+            <section className="w-[90%] mx-auto flex gap-8 overflow-x-hidden">
                 {/* Left Section */}
-                <div className="flex-[2] flex flex-col gap-6 p-8">
+                <div className="flex-[2] flex flex-col gap-6 p-8 overflow-x-hidden">
                     <h3 className="text-2xl font-bold text-gray-800">
                         <span className="bg-[#00AAA1] text-white px-3 py-1 rounded-md">Featured</span> This Month
                     </h3>
 
                     {/* Cards displayed side by side */}
-                    <div className="flex gap-6">
+                    <div className="flex gap-6 overflow-x-hidden">
                         {[0, 1].map((_, i) => (
                             <div key={i} className=" p-5 rounded-lg flex flex-col gap-4 w-1/2">
                                 <span className="text-sm font-semibold">Travel</span>
@@ -43,12 +43,12 @@ export const HomePage = () => {
                 </div>
 
                 {/* Right Section */}
-                <div className="flex-1 flex flex-col gap-6 p-8">
+                <div className="flex-1 flex flex-col gap-6 p-8 overflow-x-hidden">
                     <h3 className="text-2xl font-bold text-gray-800">
                         <span className="bg-[#00AAA1] text-white px-3 py-1 rounded-md">Popular</span> Posted
                     </h3>
 
-                    <div className="border-l-4 border-[#00AAA1] pl-4 flex flex-col gap-6">
+                    <div className="border-l-4 border-[#00AAA1] pl-4 flex flex-col gap-6 overflow-x-hidden">
                         {[0, 1].map((_, i) => (
                             <div key={i} className="flex flex-col gap-1">
                                 <span className="text-sm text-[#00AAA1] font-semibold">Travel</span>

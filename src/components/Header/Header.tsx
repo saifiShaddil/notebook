@@ -33,7 +33,7 @@ const Header = () => {
   }, [searchTerm, posts]);
 
   return (
-    <header className="bg-[#E8F3F3] h-[8vh] w-full shadow-sm relative z-10">
+    <header className="bg-[#E8F3F3] h-[8vh] w-full shadow-sm relative z-10 overflow-x-hidden">
       <div className="w-[90%] h-full mx-auto flex items-center justify-between">
         {/* Left nav */}
         <div className="flex gap-6 text-sm text-gray-700 font-medium items-center">
