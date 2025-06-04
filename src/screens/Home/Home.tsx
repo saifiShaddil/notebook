@@ -1,69 +1,73 @@
-import { useSelector } from "react-redux"
-import type { StoreState } from "../../store/store";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import type { StoreState } from "../../store/store";
 
 export const HomePage = () => {
     const posts = useSelector<StoreState>(state => state.posts.posts);
-  
-    return (
-        <main className='bg-[#F2F8F7] h-[91vh]' >
-            <section className="w-[80%] mx-auto flex flex-col">
-                {/* left section  */}
-                <div className=" flex flex-1">
-                    <div className="flex-col flex gap-5">
-                        <h3 className="bg-[#00AAA1] text-2xl font-bold text-white">Featured <span className="text-xl font-semibold">This Month</span></h3>
-                        {/* card */}
-                        <div className="flex flex-col gap-2">
-                            <h5 className="text-[#DFF1F0]">Travel</h5>
-                            <h2 className="font-semibold cursor-pointer"> <Link to={'/post'}>Set Video Playback speed with Javascript</Link></h2>
-                            <div className="image h-[16vh]">
-                                <img src="" alt="post-image" />
-                            </div>
-                            <div className="card-bottom">
-                                <div className="flex justify-around">
-                                    <div> <span className="h-4 w-4 rounded-full bg-gray-300"></span> Jenny kiaa</div>
-                                    <div>Jenny kiaa</div>
-                                    <div>3 min. to read</div>
-                                </div>
-                                <p>
-                                    Did you come here for something in particular or just general Riker-bashing? And blowing into
-                                </p>
-                            </div>
-                        </div>
-                        {/* card */}
-                        <div className="flex flex-col gap-2">
-                            <h5 className="text-[#00AAA1]">Travel</h5>
-                            <h2 className="font-semibold cursor-pointer"> <Link to={'/post'}>Set Video Playback speed with Javascript</Link></h2>
-                            <div className="image h-[16vh]">
-                                <img src="" alt="post-image" />
-                            </div>
-                            <div className="card-bottom">
-                                <div className="flex justify-around">
-                                    <div> <span className="h-4 w-4 rounded-full bg-gray-300"></span> Jenny kiaa</div>
-                                    <div>Jenny kiaa</div>
-                                    <div>3 min. to read</div>
-                                </div>
-                                <p>
-                                    Did you come here for something in particular or just general Riker-bashing? And blowing into
-                                </p>
-                            </div>
-                        </div>
-                    </div>
 
+    return (
+        <main className='bg-[#F2F8F7] py-10 min-h-[91vh]'>
+            <section className="w-[90%] mx-auto flex gap-8">
+                {/* Left Section */}
+                <div className="flex-[2] flex flex-col gap-6 p-8">
+                    <h3 className="text-2xl font-bold text-gray-800">
+                        <span className="bg-[#00AAA1] text-white px-3 py-1 rounded-md">Featured</span> This Month
+                    </h3>
+
+                    {/* Cards displayed side by side */}
+                    <div className="flex gap-6">
+                        {[0, 1].map((_, i) => (
+                            <div key={i} className=" p-5 rounded-lg flex flex-col gap-4 w-1/2">
+                                <span className="text-sm font-semibold">Travel</span>
+                                <h2 className="text-lg font-bold text-gray-900 hover:underline">
+                                    <Link to="/post">Set Video Playback Speed With Javascript</Link>
+                                </h2>
+                                <div className="bg-gray-200 h-40 rounded-md" />
+
+                                <div className="flex items-center gap-4 text-sm text-gray-500">
+                                    <div className="flex items-center gap-2">
+                                        <span className="h-6 w-6 rounded-full bg-gray-400" />
+                                        Jenny Kiaa
+                                    </div>
+                                    <span>· 02 December 2022</span>
+                                    <span>· 3 Min. To Read</span>
+                                </div>
+
+                                <p className="text-sm text-gray-600">
+                                    Did you come here for something in particular or just general Riker-bashing? And blowing into
+                                    maximum warp.
+                                </p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
-                {/* divider here */}
-                {/* right section  */}
-                <div className="flex-1 flex flex-col gap-5">
-                     <h3 className="bg-[#00AAA1] text-2xl font-bold text-white">Polular <span className="text-xl font-semibold">Posted</span></h3>
-                    <div>
+                {/* Right Section */}
+                <div className="flex-1 flex flex-col gap-6 p-8">
+                    <h3 className="text-2xl font-bold text-gray-800">
+                        <span className="bg-[#00AAA1] text-white px-3 py-1 rounded-md">Popular</span> Posted
+                    </h3>
 
+                    <div className="border-l-4 border-[#00AAA1] pl-4 flex flex-col gap-6">
+                        {[0, 1].map((_, i) => (
+                            <div key={i} className="flex flex-col gap-1">
+                                <span className="text-sm text-[#00AAA1] font-semibold">Travel</span>
+                                <h4 className="text-md font-bold text-gray-800 hover:underline">
+                                    <Link to="/post">Design Is The Mix Of Emotions</Link>
+                                </h4>
+                                <div className="text-sm text-gray-500">
+                                    <span className="mr-2">Jenny Kiaa</span>
+                                    · 02 December 2022
+                                    · 3 Min. To Read
+                                </div>
+                                <p className="text-sm text-gray-600 line-clamp-2">
+                                    Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp.
+                                </p>
+                            </div>
+                        ))}
                     </div>
-
-
                 </div>
             </section>
         </main>
-    )
-}
-
+    );
+};

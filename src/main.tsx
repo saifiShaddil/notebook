@@ -7,7 +7,7 @@ import './index.css'
 import { HomePage } from './screens/Home/Home.tsx'
 import { Provider } from 'react-redux'
 import { store } from './store/store.ts'
-import Posts from './screens/Post/Posts.tsx'
+import PostDetail from './screens/Post/Posts.tsx'
 
 const RootRoutes = () => {
   return (
@@ -16,7 +16,7 @@ const RootRoutes = () => {
         <Header />
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/post' element={<Posts />} />
+          <Route path="/post/:id" element={<PostDetail />} />
           <Route path='*' element={<Navigate to={'/'} />} />
         </Routes>
         <Footer />

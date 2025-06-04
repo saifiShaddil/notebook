@@ -1,7 +1,7 @@
 
 const Footer = () => {
   return (
-    <div className="bg-blue-500 flex w-[100vw]">
+    <div className="bg-[#DFF1F0] flex w-[100vw]">
       Footer
     </div>
   )
