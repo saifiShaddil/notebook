@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import type { StoreState } from "../../store/store";
+import RecentlyPosted from "../../components/RecentPost/RecentPost";
 
 export const HomePage = () => {
     const posts = useSelector<StoreState>(state => state.posts.posts);
@@ -67,7 +68,10 @@ export const HomePage = () => {
                         ))}
                     </div>
                 </div>
+
             </section>
+                {/* recent Post */}
+                <RecentlyPosted />
         </main>
     );
 };
