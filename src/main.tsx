@@ -16,6 +16,7 @@ const RootRoutes = () => {
         <Header />
         <Routes>
           <Route path='/' element={<HomePage />} />
+          <Route path="/post/" element={<PostDetail />} />
           <Route path="/post/:id" element={<PostDetail />} />
           <Route path='*' element={<Navigate to={'/'} />} />
         </Routes>
