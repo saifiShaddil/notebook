@@ -33,7 +33,7 @@ const Header = () => {
   }, [searchTerm, posts]);
 
   return (
-    <header className="bg-[#E8F3F3] h-[8vh] w-full shadow-sm relative z-10 overflow-x-hidden">
+    <header className="bg-[#E8F3F3] h-[8vh] w-full shadow-sm relative z-10">
       <div className="w-[90%] h-full mx-auto flex items-center justify-between">
         {/* Left nav */}
         <div className="flex gap-6 text-sm text-gray-700 font-medium items-center">
@@ -51,14 +51,14 @@ const Header = () => {
         </div>
 
         {/* Center logo */}
-        <div className="flex items-end gap-1">
+        <Link to={'/'} className="flex items-end gap-1">
           <span className="text-2xl font-bold bg-[#00AAA1] text-white px-2 py-0.5 rounded">
             NOTE
           </span>
           <span className=" text-sm font-medium">
             Book.
           </span>
-        </div>
+        </Link>
 
         {/* Right icons */}
         <div className="flex items-center gap-6 text-sm text-gray-700 font-medium relative">
