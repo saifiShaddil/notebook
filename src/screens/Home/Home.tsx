@@ -1,11 +1,7 @@
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import type { StoreState } from "../../store/store";
 import RecentlyPosted from "../../components/RecentPost/RecentPost";
 
 export const HomePage = () => {
-    const posts = useSelector<StoreState>(state => state.posts.posts);
-
     return (
         <main className='bg-[#F2F8F7] py-10 min-h-[91vh] overflow-x-hidden'>
             <section className="w-[90%] mx-auto flex gap-8 overflow-x-hidden">
