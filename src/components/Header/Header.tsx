@@ -55,7 +55,7 @@ const Header = () => {
           <span className="text-2xl font-bold bg-[#00AAA1] text-white px-2 py-0.5 rounded">
             NOTE
           </span>
-          <span className="text-[#00AAA1] text-sm font-medium pb-[2px]">
+          <span className=" text-sm font-medium">
             Book.
           </span>
         </div>
